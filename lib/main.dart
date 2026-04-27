@@ -1,9 +1,21 @@
+import 'package:dress_pet/controller/screen_controller.dart';
+import 'package:dress_pet/providers/clothe_provider.dart';
+import 'package:dress_pet/providers/page_provider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dress_pet/screens/screens.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => PageProvider()),
+        ChangeNotifierProvider(create: (context) => ClotheProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +31,7 @@ class MyApp extends StatelessWidget {
         'home': (context) => HomeScreen(),
         'login': (context) => LoginScreen(),
       },
-      initialRoute: 'login',
+      home: ScreenController(),
     );
   }
 }
