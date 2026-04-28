@@ -1,7 +1,9 @@
 import 'dart:math';
 
+import 'package:dress_pet/providers/page_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:provider/provider.dart';
 
 class LoginContentTop extends StatelessWidget {
   const LoginContentTop({super.key});
@@ -20,14 +22,17 @@ class LoginContentTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final page = Provider.of<PageProvider>(context);
+
     double phoneSizeH = MediaQuery.of(context).size.height;
     double phoneSizeW = MediaQuery.of(context).size.width;
     double boxSizeH = phoneSizeH * 0.5;
     double boxSizeW = phoneSizeW * 0.8;
 
-    Color titleColor = Color(0xFF6D94C5);
+    Color titleColor = page.blue;
     Color bodyColor = Colors.black;
-    Color actionColor = Color(0xFFF5EFE6);
+    Color actionColor = Colors.black;
+    Color actionBoxColor = page.whiteCream;
 
     TextStyle styleTitle = TextStyle(
       color: titleColor,
@@ -45,7 +50,7 @@ class LoginContentTop extends StatelessWidget {
     );
 
     TextStyle styleAction = TextStyle(
-      color: Colors.black,
+      color: actionColor,
       fontSize: 10000,
       height: 1.0,
       fontFamily: 'Figtree',
@@ -95,7 +100,7 @@ class LoginContentTop extends StatelessWidget {
                   width: boxSizeW,
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   decoration: BoxDecoration(
-                    color: actionColor,
+                    color: actionBoxColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(

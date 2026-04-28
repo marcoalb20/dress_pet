@@ -8,8 +8,8 @@ class ScreenController extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color bgColor = Color(0xFFCBDCEB);
     final page = Provider.of<PageProvider>(context);
+    Color bgColor = page.skyBlue;
 
     return Scaffold(
       backgroundColor: bgColor,
