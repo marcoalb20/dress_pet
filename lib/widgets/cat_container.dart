@@ -20,16 +20,28 @@ class CatContainer extends StatelessWidget {
       height: catBoxSizeH,
       width: catBoxSizeW,
       // color: Colors.red,
-      padding: EdgeInsets.all(30),
+      padding: EdgeInsets.all(20),
       child: Center(
         child: Stack(
           children: [
+            // Container(
+            //   decoration: BoxDecoration(
+            //     borderRadius: BorderRadius.circular(20),
+            //     border: BoxBorder.all(color: page.whiteCream, width: 5),
+            //   ),
+            //   child: ClipRRect(
+            //     borderRadius: BorderRadius.circular(15),
+            //     child: Image.asset(clothe.getWallPath, fit: BoxFit.cover),
+            //   ),
+            // ),
             Center(
               child: Container(
                 width: catBoxSizeW * 0.6,
+                
                 child: Image.asset(
-                  'assets/img/interfaces/cat.png',
+                  'assets/img/interface/cat.png',
                   fit: BoxFit.contain,
+                  
                 ),
               ),
             ),
@@ -62,7 +74,7 @@ class CatContainer extends StatelessWidget {
                     page.goToPage(0);
                   },
                   child: Image.asset(
-                    'assets/img/interfaces/head.png',
+                    'assets/img/interface/head.png',
                     fit: BoxFit.contain,
                   ),
                 ),

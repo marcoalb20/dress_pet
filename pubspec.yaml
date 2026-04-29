@@ -29,9 +29,11 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/img/interfaces/
-    - assets/img/clothes/pants/
-    - assets/img/clothes/shirt/
+    - assets/img/interface/
+    - assets/img/wall/
+    - assets/img/clothe/
+    - assets/img/clothe/top/
+    - assets/img/clothe/bottom/
 
   fonts:
     - family: Figtree

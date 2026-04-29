@@ -29,7 +29,7 @@ class LoginContentBottom extends StatelessWidget {
             alignment: AlignmentGeometry.bottomRight,
             children: [
               Image.asset(
-                'assets/img/interfaces/login-cat.png',
+                'assets/img/interface/login-cat.png',
                 fit: BoxFit.contain,
                 alignment: AlignmentGeometry.bottomRight,
               ),

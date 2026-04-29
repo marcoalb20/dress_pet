@@ -7,7 +7,7 @@ class LoginBg extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: Image.asset(
-        'assets/img/interfaces/bg-image.png',
+        'assets/img/interface/bg-image.png',
         fit: BoxFit.cover,
       ),
     );
