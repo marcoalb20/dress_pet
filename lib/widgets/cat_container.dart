@@ -16,72 +16,129 @@ class CatContainer extends StatelessWidget {
     double catBoxSizeH = phoneSizeH * 0.4;
     double catBoxSizeW = phoneSizeW;
 
-    return Container(
+    return SizedBox(
       height: catBoxSizeH,
       width: catBoxSizeW,
-      // color: Colors.red,
-      padding: EdgeInsets.all(20),
-      child: Center(
-        child: Stack(
-          children: [
-            // Container(
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(20),
-            //     border: BoxBorder.all(color: page.whiteCream, width: 5),
-            //   ),
-            //   child: ClipRRect(
-            //     borderRadius: BorderRadius.circular(15),
-            //     child: Image.asset(clothe.getWallPath, fit: BoxFit.cover),
-            //   ),
-            // ),
-            Center(
-              child: Container(
-                width: catBoxSizeW * 0.6,
-                
-                child: Image.asset(
-                  'assets/img/interface/cat.png',
-                  fit: BoxFit.contain,
-                  
-                ),
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 400),
+              transitionBuilder: (child, animation) {
+                return FadeTransition(opacity: animation, child: child);
+              },
+              child: SizedBox.expand(
+                key: ValueKey(clothe.getWallPath),
+                child: Image.asset(clothe.getWallPath, fit: BoxFit.cover),
               ),
             ),
-            Center(
-              child: Container(
-                width: catBoxSizeW * 0.6,
-                // color: Colors.blue,
-                child: Image.asset(
-                  clothe.getClothePathBottom,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            Center(
-              child: Container(
-                width: catBoxSizeW * 0.6,
-                // color: Colors.blue,
-                child: Image.asset(
-                  clothe.getClothePathTop,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            Center(
-              child: Container(
-                width: catBoxSizeW * 0.6,
-                // color: Colors.green,
-                child: InkWell(
-                  onTap: () {
-                    page.goToPage(0);
-                  },
-                  child: Image.asset(
-                    'assets/img/interface/head.png',
-                    fit: BoxFit.contain,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Center(
+              child: Stack(
+                children: [
+                  Center(
+                    child: SizedBox(
+                      width: catBoxSizeW * 0.6,
+                      child: Image.asset(
+                        'assets/img/interface/shadow.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
-                ),
+                  Center(
+                    child: SizedBox(
+                      width: catBoxSizeW * 0.6,
+                      child: Image.asset(
+                        'assets/img/interface/cat.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 400),
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                      child: SizedBox(
+                        key: ValueKey(clothe.getClothePathBottom),
+                        width: catBoxSizeW * 0.6,
+                        child: Image.asset(
+                          clothe.getClothePathBottom,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 400),
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                      child: SizedBox(
+                        key: ValueKey(clothe.getClothePathTop),
+                        width: catBoxSizeW * 0.6,
+                        child: Image.asset(
+                          clothe.getClothePathTop,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 400),
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                      child: SizedBox(
+                        key: ValueKey(clothe.getClothePathAccessories),
+                        width: catBoxSizeW * 0.6,
+                        child: Image.asset(
+                          clothe.getClothePathAccessories,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 400),
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(opacity: animation, child: child);
+                      },
+                      child: SizedBox(
+                        key: ValueKey(clothe.getClothePathToys),
+                        width: catBoxSizeW * 0.6,
+                        child: Image.asset(
+                          clothe.getClothePathToys,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: SizedBox(
+                      width: catBoxSizeW * 0.6,
+                      child: InkWell(
+                        onTap: () {
+                          page.goToPage(0);
+                        },
+                        child: Image.asset(
+                          'assets/img/interface/head.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

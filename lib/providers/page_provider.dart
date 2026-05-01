@@ -11,7 +11,7 @@ class PageProvider with ChangeNotifier {
   Color white = Colors.white;
   Color black = Colors.black;
 
-  PageController pageController = PageController(initialPage: 1);
+  PageController pageController = PageController(initialPage: 0);
 
   void goToPage(int page) {
     actualPage = page;

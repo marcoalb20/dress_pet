@@ -34,6 +34,14 @@ flutter:
     - assets/img/clothe/
     - assets/img/clothe/top/
     - assets/img/clothe/bottom/
+    - assets/img/clothe/accessories/
+    - assets/img/clothe/toys/
+    - assets/img/menu/
+    - assets/img/menu/top/
+    - assets/img/menu/bottom/
+    - assets/img/menu/accessories/
+    - assets/img/menu/toys/
+    - assets/img/menu/wall/
 
   fonts:
     - family: Figtree
